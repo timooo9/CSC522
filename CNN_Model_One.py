@@ -31,7 +31,7 @@ testData = alldata[17001:]
 
 num_epochs = 10
 batch_size = 100
-learning_rate = 0.01
+learning_rate = 0.1
 
 train_loader = torch.utils.data.DataLoader(dataset=trainData, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(dataset=testData, batch_size=batch_size, shuffle=True)
