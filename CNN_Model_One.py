@@ -29,8 +29,8 @@ alldata = addClassifier(trainTensors, trainingBreedLabels)
 trainData = alldata[:17000]
 testData = alldata[17001:]
 
-num_epochs = 5
-batch_size = 150
+num_epochs = 10
+batch_size = 100
 learning_rate = 0.01
 
 train_loader = torch.utils.data.DataLoader(dataset=trainData, batch_size=batch_size, shuffle=True)
@@ -39,10 +39,10 @@ test_loader = torch.utils.data.DataLoader(dataset=testData, batch_size=batch_siz
 class CNNModel(nn.Module):
     def __init__(self):
         super(CNNModel, self).__init__()
-        self.cnn1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, stride=1, padding=0)
+        self.cnn1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=4, stride=1, padding=0)
         self.relu1 = nn.ReLU()
 
-        self.cnn2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=0)
+        self.cnn2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=4, stride=1, padding=0)
         self.relu2 = nn.ReLU()
 
         self.maxpool2 = nn.MaxPool2d(2)
