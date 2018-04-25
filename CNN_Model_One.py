@@ -53,7 +53,6 @@ class CNNModel(nn.Module):
     def forward(self, x):
         x = self.cnn1(x)
         x = self.relu1(x)
-        x = self.maxpool1(x)
         x = self.cnn2(x)
         x = self.relu2(x)
 
@@ -66,6 +65,7 @@ class CNNModel(nn.Module):
         return x
 
 model = CNNModel()
+#softmax is included in the CrossEntropyLoss funtion
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
