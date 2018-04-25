@@ -42,8 +42,6 @@ class CNNModel(nn.Module):
         self.cnn1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, stride=1, padding=0)
         self.relu1 = nn.ReLU()
 
-        self.maxpool1 = nn.MaxPool2d(2)
-
         self.cnn2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=0)
         self.relu2 = nn.ReLU()
 
